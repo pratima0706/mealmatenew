@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "742814873484",
+    "project_id": "mealmatee-b46de",
+    "storage_bucket": "mealmatee-b46de.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742814873484:android:9e728da1d19dfbccc948a9",
+        "android_client_info": {
+          "package_name": "com.example.mealmatess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742814873484-onrjj1ppleto8dpl1i4sm9130uj16h52.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mealmatess",
+            "certificate_hash": "2dab489a49dba8c5c18205e4c2c9d7e1dfa6b279"
+          }
+        },
+        {
+          "client_id": "742814873484-u7hkg54fne8b3tr1ngae65e2tf4bgj4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2-PIBn8jU9oc97dYe6He_2Qs4ZSoZDFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742814873484-u7hkg54fne8b3tr1ngae65e2tf4bgj4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

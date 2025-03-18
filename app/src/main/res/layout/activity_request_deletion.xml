@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="6dp">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Back to Home"
+            android:padding="6dp"
+            android:minWidth="32dp"
+            android:minHeight="32dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/cinnamon_spice"
+            android:visibility="visible"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Request Account Deletion"
+            android:textSize="16sp"
+            android:textColor="@color/cinnamon_spice"
+            android:paddingStart="6dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/surface"
+        android:elevation="2dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Are you sure you want to request account deletion? This action cannot be undone."
+            android:textSize="18sp"
+            android:textColor="@color/text_primary"
+            android:paddingBottom="16dp"/>
+
+        <Button
+            android:id="@+id/confirmDeletionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm Deletion"
+            android:textSize="14sp"
+            android:textColor="@color/text_on_primary"
+            android:padding="10dp"
+            android:minWidth="100dp"
+            android:minHeight="44dp"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/cancelDeletionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textSize="14sp"
+            android:textColor="@color/text_on_primary"
+            android:padding="10dp"
+            android:minWidth="100dp"
+            android:minHeight="44dp"
+            android:backgroundTint="@color/primary"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</LinearLayout>

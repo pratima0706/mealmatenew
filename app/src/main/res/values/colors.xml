@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="sunset_orange">#FF6F3C</color>
+    <color name="amber_glow">#FFB74D</color>
+    <color name="cinnamon_spice">#8D6E63</color>
+    <color name="creamy_peach">#FFF3E0</color>
+    <color name="honey_beige">#F5E9B9</color>
+    <color name="background">@color/creamy_peach</color>
+    <color name="text_primary">@color/cinnamon_spice</color>
+    <color name="text_secondary">#8D6E63</color>
+    <color name="text_on_primary">@color/creamy_peach</color>
+    <color name="primary">@color/sunset_orange</color>
+    <color name="surface">@color/honey_beige</color>
+    <color name="nav_icon_tint">@color/cinnamon_spice</color>
+    <color name="primary_light">#FFAB91</color>
+    <color name="favorite_border">@color/cinnamon_spice</color>
+    <color name="favorite_filled">@color/sunset_orange</color>
+    <color name="primary2">#FF6200EE</color>
+    <color name="primary_dark">#FF3700B3</color>
+    <color name="accent">#FF03DAC5</color>
+    <color name="light_beige">#E8D5A3</color>
+    <color name="dark_text">#011012</color>
+    <color name="input_text">#2F2F2F</color>
+</resources>

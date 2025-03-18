@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@drawable/grid_item_background"
+    android:elevation="2dp">
+
+    <ImageView
+        android:id="@+id/meal_image"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_placeholder"
+        android:contentDescription="Meal Image"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/meal_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Meal Name"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="sans-serif-medium"/>
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/favorite_selector"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Favorite Meal"
+            android:padding="8dp"
+            app:tint="@color/amber_glow"/>
+    </LinearLayout>
+</LinearLayout>

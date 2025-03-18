@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    android:background="@drawable/gradient_top_bar"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emma"
+        android:textSize="24sp"
+        android:textColor="@color/creamy_peach"
+        android:fontFamily="sans-serif-medium"/>
+
+    <TextView
+        android:id="@+id/email_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="emma@example.com"
+        android:textSize="14sp"
+        android:textColor="@color/creamy_peach"
+        android:fontFamily="sans-serif-light"/>
+</LinearLayout>

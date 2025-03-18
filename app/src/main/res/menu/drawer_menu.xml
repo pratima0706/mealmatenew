@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/baseline_person_24"
+        android:title="Profile"/>
+    <item
+        android:id="@+id/menu_grocery_stores"
+        android:icon="@drawable/ic_store"
+        android:title="Grocery Stores"/>
+    <item
+        android:id="@+id/menu_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"/>
+    <item
+        android:id="@+id/menu_help"
+        android:icon="@drawable/ic_help"
+        android:title="Help &amp; Support"/>
+    <item
+        android:id="@+id/menu_feedback"
+        android:icon="@drawable/ic_feedback"
+        android:title="Feedback"/>
+    <item
+        android:id="@+id/menu_request_account_deletion"
+        android:icon="@drawable/ic_delete"
+        android:title="Request Account Deletion"/>
+    <item
+        android:id="@+id/menu_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout"/>
+</menu>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/mlogo3"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/mlogo3"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MealMatess"
+        tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD2-PIBn8jU9oc97dYe6He_2Qs4ZSoZDFM" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RequestDeletionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MealPlanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroceryStoresActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GroceryListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FavoriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DayDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+
+        <receiver android:name=".receiver.ReminderReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.mealmatess.REMINDER_ACTION" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

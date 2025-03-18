@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="6dp"
+    android:background="@color/surface"
+    android:elevation="1dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="6dp">
+
+        <TextView
+            android:id="@+id/grocery_ingredient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredient"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/grocery_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/purchased_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:buttonTint="@color/cinnamon_spice"
+        android:contentDescription="Mark as Purchased"/>
+</LinearLayout>

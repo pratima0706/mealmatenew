@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="6dp">
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"
+                android:contentDescription="Back to Home"
+                android:padding="6dp"
+                android:minWidth="32dp"
+                android:minHeight="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="@color/cinnamon_spice"
+                android:visibility="visible"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Grocery List"
+                android:textSize="16sp"
+                android:textColor="@color/cinnamon_spice"
+                android:paddingStart="6dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="6dp"
+            android:background="@color/surface"
+            android:elevation="2dp">
+
+            <Spinner
+                android:id="@+id/category_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/grocery_categories"
+                android:textSize="14sp"
+                android:background="@drawable/button_background"/>
+
+            <ImageButton
+                android:id="@+id/delegate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_share"
+                android:contentDescription="Delegate"
+                android:padding="6dp"
+                android:minWidth="40dp"
+                android:minHeight="40dp"
+                android:background="@drawable/button_background"
+                android:layout_marginStart="6dp"
+                app:tint="@color/cinnamon_spice"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/grocery_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/surface"
+            android:padding="6dp"
+            android:layout_marginTop="6dp"
+            android:elevation="2dp"/>
+
+        <ImageButton
+            android:id="@+id/add_item_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            android:contentDescription="Add Item"
+            android:padding="6dp"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:background="@drawable/round_button_background"
+            android:layout_gravity="end"
+            android:layout_marginTop="6dp"
+            app:tint="@color/text_on_primary"/>
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

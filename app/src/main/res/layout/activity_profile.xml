@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="24dp">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back to Home"
+            android:padding="8dp"
+            app:tint="#000000" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Profile"
+            android:textSize="32sp"
+            android:textColor="@color/cinnamon_spice"
+            android:fontFamily="sans-serif-medium"
+            android:paddingStart="16dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/baseline_person_24"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/circle_background"/>
+
+                <ImageButton
+                    android:id="@+id/upload_image_button"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_camera"
+                    android:background="@drawable/circle_background"
+                    android:layout_alignBottom="@id/profile_image"
+                    android:layout_alignEnd="@id/profile_image"
+                    app:tint="@color/sunset_orange"
+                    android:contentDescription="Upload Profile Picture"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <!-- Read-Only View -->
+            <LinearLayout
+                android:id="@+id/read_only_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/greeting_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="24sp"
+                    android:textColor="@color/cinnamon_spice"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:background="@drawable/cardview_gradient">
+
+                        <TextView
+                            android:id="@+id/profile_name_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Name: "
+                            android:textSize="20sp"
+                            android:textColor="@color/text_primary"
+                            android:fontFamily="sans-serif-medium"
+                            android:paddingBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/profile_email_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email: "
+                            android:textSize="18sp"
+                            android:textColor="@color/text_secondary"
+                            android:fontFamily="sans-serif-light"
+                            android:paddingBottom="8dp"/>
+
+                        <TextView
+                            android:id="@+id/profile_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phone: (123) 456-7890"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_secondary"
+                            android:fontFamily="sans-serif-light"
+                            android:paddingBottom="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/edit_profile_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Profile"
+                    android:textSize="18sp"
+                    android:textColor="@color/creamy_peach"
+                    android:background="@drawable/button_background"
+                    android:padding="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/logout_button_read_only"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="@color/sunset_orange"
+                    android:padding="16dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <!-- Editable View -->
+            <LinearLayout
+                android:id="@+id/edit_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/greeting_text_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Your Profile"
+                    android:textSize="24sp"
+                    android:textColor="@color/cinnamon_spice"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:layout_marginBottom="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:background="@drawable/cardview_gradient">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Name"
+                            app:boxStrokeColor="@color/cinnamon_spice">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/profile_name_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:textColor="@color/text_primary"
+                                android:fontFamily="sans-serif-medium"
+                                android:paddingBottom="8dp"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email"
+                            app:boxStrokeColor="@color/cinnamon_spice">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/profile_email_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:textColor="@color/text_secondary"
+                                android:fontFamily="sans-serif-light"
+                                android:paddingBottom="8dp"
+                                android:inputType="textEmailAddress"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <TextView
+                            android:id="@+id/profile_phone_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phone: (123) 456-7890"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_secondary"
+                            android:fontFamily="sans-serif-light"
+                            android:paddingBottom="8dp"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/change_password_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Change Password"
+                            android:textSize="16sp"
+                            android:textColor="@color/creamy_peach"
+                            android:background="@drawable/button_background"
+                            android:padding="12dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save Changes"
+                    android:textSize="18sp"
+                    android:textColor="@color/creamy_peach"
+                    android:background="@drawable/button_background"
+                    android:padding="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/logout_button_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="@color/sunset_orange"
+                    android:padding="16dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <!-- Header with Back Arrow -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="24dp">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back to Home"
+            android:padding="8dp"
+            app:tint="@color/cinnamon_spice" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Help &amp; Support"
+            android:textSize="32sp"
+            android:textColor="@color/cinnamon_spice"
+            android:fontFamily="sans-serif-medium"
+            android:paddingStart="16dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Help Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@color/surface"
+        android:elevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frequently Asked Questions"
+                android:textSize="24sp"
+                android:textColor="@color/cinnamon_spice"
+                android:fontFamily="sans-serif-medium"
+                android:paddingBottom="16dp"
+                android:textStyle="bold"/>
+
+            <!-- FAQ 1 -->
+            <LinearLayout
+                android:id="@+id/faq1_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="How do I add a meal plan?"
+                    android:textSize="18sp"
+                    android:textColor="@color/text_primary"/>
+
+                <ImageView
+                    android:id="@+id/faq1_arrow"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_arrow_down"
+                    app:tint="@color/cinnamon_spice"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/faq1_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap 'Add' from the bottom navigation and enter your meal details."
+                android:textSize="16sp"
+                android:textColor="@color/text_secondary"
+                android:padding="8dp"
+                android:visibility="gone"/>
+
+            <!-- Contact Us -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Us"
+                android:textSize="24sp"
+                android:textColor="@color/cinnamon_spice"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/contact_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email: support@mealmate.com"
+                android:textSize="18sp"
+                android:textColor="@android:color/holo_blue_dark"
+                android:paddingBottom="8dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone: (123) 456-7890"
+                android:textSize="18sp"
+                android:textColor="@color/text_primary"
+                android:fontFamily="sans-serif-light"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
