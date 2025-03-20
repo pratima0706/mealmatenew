@@ -22,8 +22,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MealMate"
-        android:textSize="36sp"
+        android:text="Welcome to MealMate"
+        android:textSize="30sp"
         android:textColor="@color/text_on_primary"
         android:fontFamily="sans-serif-medium"
         android:textStyle="bold"
@@ -31,7 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"/>
 
-    <!-- ProgressBar (Replaces Get Started Button) -->
+    <!-- ProgressBar -->
     <ProgressBar
         android:id="@+id/splash_progress_bar"
         android:layout_width="200dp"

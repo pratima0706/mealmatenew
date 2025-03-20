@@ -60,6 +60,7 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+
                 <!-- Search Bar -->
                 <LinearLayout
                     android:id="@+id/search_layout"

@@ -149,15 +149,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:text="Sign in with Google"
-                android:backgroundTint="@color/creamy_peach"
+                android:backgroundTint="#F4F2EE"
                 android:textColor="@color/black"
                 android:layout_marginTop="16dp"
-                android:drawableStart="@drawable/ic_map"
                 app:cornerRadius="12dp"
                 android:drawablePadding="12dp"
                 app:strokeWidth="1dp"
                 android:elevation="2dp"
-                android:drawableTint="@color/text_primary"
                 app:iconSize="24dp"
                 android:paddingStart="16dp"/>
 

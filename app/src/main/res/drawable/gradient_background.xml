@@ -6,7 +6,7 @@
                 android:type="radial"
                 android:gradientRadius="300dp"
                 android:startColor="#FFF3E0"
-                android:endColor="#FFDAB9"
+                android:endColor="#E3F8BB"
                 android:centerX="50%"
                 android:centerY="50%"/>
         </shape>
@@ -15,8 +15,8 @@
         <shape>
             <gradient
                 android:angle="45"
-                android:startColor="#FFF3E0"
-                android:endColor="@color/accent"
+                android:startColor="#E3F4C8"
+                android:endColor="#ADE6ED"
                 android:centerX="0%"
                 android:centerY="0%"/>
         </shape>
