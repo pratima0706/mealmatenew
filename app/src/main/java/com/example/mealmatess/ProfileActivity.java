@@ -100,24 +100,20 @@ public class ProfileActivity extends AppCompatActivity {
             editView.setVisibility(View.VISIBLE);
             uploadImageButton.setVisibility(View.VISIBLE);
         });
-
         saveButton.setOnClickListener(v -> {
             String name = profileNameInput.getText().toString().trim();
             String email = profileEmailInput.getText().toString().trim();
-
             if (name.isEmpty() || email.isEmpty()) {
                 Toast.makeText(this, "Name and email are required fields", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            // Use current password since password change is handled separately
+            // Usin current password since password change is handled separately
             User currentUserForPassword = dataManager.getUser(oldEmail);
             if (currentUserForPassword == null) {
                 Toast.makeText(this, "Error retrieving user data", Toast.LENGTH_SHORT).show();
                 return;
             }
-
-            // Update user profile (excluding password)
+            // Updates user profile (excluding password)
             dataManager.updateUser(oldEmail, email, currentUserForPassword.getPassword(), name, profileImage);
             Toast.makeText(this, "Profile updated successfully!", Toast.LENGTH_SHORT).show();
 
@@ -153,10 +149,10 @@ public class ProfileActivity extends AppCompatActivity {
             greetingText.setText("Hello, " + nickname + "!");
             profileNameText.setText("Name: " + fullName);
             profileEmailText.setText("Email: " + currentUser.getEmail());
-            profilePhoneText.setText("Phone: (123) 456-7890"); // Placeholder
+            profilePhoneText.setText("Phone: (064) 456-7890"); // Placeholder
             profileNameInput.setText(fullName);
             profileEmailInput.setText(currentUser.getEmail());
-            profilePhoneEdit.setText("Phone: (123) 456-7890"); // Placeholder
+            profilePhoneEdit.setText("Phone: (064) 456-7890"); // Placeholder
             if (currentUser.getImage() != null) {
                 profileImageView.setImageBitmap(currentUser.getImage());
                 profileImage = currentUser.getImage();
@@ -221,6 +217,8 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(this, "Error updating password", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         dialog.show();
     }

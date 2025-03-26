@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mealmatess.AddActivity;
 import com.example.mealmatess.R;
+import com.example.mealmatess.RecipeDetailActivity;
 import com.example.mealmatess.models.Meal;
 import com.example.mealmatess.utils.DataManager;
 import java.util.ArrayList;
@@ -48,6 +50,20 @@ public class MealPlanAdapter extends RecyclerView.Adapter<MealPlanAdapter.MealVi
         holder.mealNameText.setText(meal.getName());
         holder.dayTitle.setText(meal.getDay() != null ? meal.getDay() : "No Day");
 
+        // Load meal image directly from Bitmap
+        if (meal.getImage() != null) {
+            holder.mealImage.setImageBitmap(meal.getImage());
+        } else {
+            holder.mealImage.setImageResource(R.drawable.ic_placeholder);
+        }
+
+        // Add click listener to navigate to RecipeDetailActivity
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, RecipeDetailActivity.class);
+            intent.putExtra("mealName", meal.getName());
+            context.startActivity(intent);
+        });
+
         // Set up swipe gestures
         setupSwipeGesture(holder, meal);
     }
@@ -64,12 +80,14 @@ public class MealPlanAdapter extends RecyclerView.Adapter<MealPlanAdapter.MealVi
     private void setupSwipeGesture(MealViewHolder holder, Meal meal) {
         GestureDetectorCompat gestureDetector = new GestureDetectorCompat(context, new GestureDetector.SimpleOnGestureListener() {
             private float translationX = 0;
+            private boolean isSwiping = false;
 
             @Override
             public boolean onDown(MotionEvent e) {
                 holder.itemView.setTranslationX(0);
                 holder.itemView.setBackgroundResource(R.drawable.grid_item_background);
                 translationX = 0;
+                isSwiping = false;
                 return true;
             }
 
@@ -88,6 +106,7 @@ public class MealPlanAdapter extends RecyclerView.Adapter<MealPlanAdapter.MealVi
                 } else {
                     holder.itemView.setBackgroundResource(R.drawable.grid_item_background);
                 }
+                isSwiping = true;
                 return true;
             }
 
@@ -119,6 +138,12 @@ public class MealPlanAdapter extends RecyclerView.Adapter<MealPlanAdapter.MealVi
                 holder.itemView.setBackgroundResource(R.drawable.grid_item_background);
                 return false;
             }
+
+            @Override
+            public boolean onSingleTapUp(MotionEvent e) {
+                // Allow click events to pass through if not swiping
+                return !isSwiping;
+            }
         });
 
         holder.itemView.setOnTouchListener((v, event) -> {
@@ -129,17 +154,20 @@ public class MealPlanAdapter extends RecyclerView.Adapter<MealPlanAdapter.MealVi
                     holder.itemView.setBackgroundResource(R.drawable.grid_item_background);
                 }
             }
-            return true;
+            // Return false to allow click events to pass through
+            return false;
         });
     }
 
     public static class MealViewHolder extends RecyclerView.ViewHolder {
         TextView mealNameText, dayTitle;
+        ImageView mealImage;
 
         public MealViewHolder(@NonNull View itemView) {
             super(itemView);
             mealNameText = itemView.findViewById(R.id.meal_name);
             dayTitle = itemView.findViewById(R.id.dayTitle);
+            mealImage = itemView.findViewById(R.id.meal_plan_image);
         }
     }
 

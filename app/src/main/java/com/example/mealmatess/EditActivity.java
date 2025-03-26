@@ -104,6 +104,8 @@ public class EditActivity extends AppCompatActivity {
                             originalMeal.getDay() != null ? originalMeal.getDay() : "" // Retain original day
                     );
                     Toast.makeText(this, "Meal updated successfully!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, MainActivity.class); // Navigate back to FavoriteActivity
+                    startActivity(intent);
                     finish();
                 } else {
                     Toast.makeText(this, "Original meal data not available", Toast.LENGTH_SHORT).show();

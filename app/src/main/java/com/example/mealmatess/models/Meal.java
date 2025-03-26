@@ -66,4 +66,6 @@ public class Meal {
     public void setFavorite(boolean favorite) {
         isFavorite = favorite;
     }
+
+
 }

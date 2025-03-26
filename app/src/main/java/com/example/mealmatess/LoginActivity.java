@@ -3,7 +3,6 @@ package com.example.mealmatess;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -75,7 +74,10 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         forgotPasswordText.setOnClickListener(v -> {
-            Toast.makeText(this, "Password reset not available offline. Contact support.", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+            startActivity(intent);
+            finish();
+
         });
 
         signUpText.setOnClickListener(v -> {

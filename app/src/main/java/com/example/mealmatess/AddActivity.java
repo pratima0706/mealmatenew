@@ -48,10 +48,8 @@ public class AddActivity extends AppCompatActivity {
         recipeNameInput = findViewById(R.id.recipe_name_input);
         ingredientsInput = findViewById(R.id.ingredients_input);
         instructionsInput = findViewById(R.id.instructions_input);
-
         // Get the pre-selected day from the intent (if any)
         preSelectedDay = getIntent().getStringExtra("day");
-
         // Set up the day spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.days_of_week, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -67,7 +65,6 @@ public class AddActivity extends AppCompatActivity {
                 }
             }
         }
-
         // Initialize pickImageLauncher
         pickImageLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -92,7 +89,6 @@ public class AddActivity extends AppCompatActivity {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             pickImageLauncher.launch(intent);
         });
-
         saveRecipeButton.setOnClickListener(v -> {
             String name = recipeNameInput.getText().toString().trim();
             String ingredients = ingredientsInput.getText().toString().trim();
@@ -104,10 +100,8 @@ public class AddActivity extends AppCompatActivity {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             }
         });
-
         backButton.setOnClickListener(v -> finish());
     }
-
     private class SaveMealTask extends AsyncTask<Void, Void, Boolean> {
         private final String name;
         private final String ingredients;
@@ -128,7 +122,7 @@ public class AddActivity extends AppCompatActivity {
             try {
                 DataManager dataManager = new DataManager(AddActivity.this);
                 dataManager.addMeal(name, ingredients, instructions, image, day);
-                // Add the meal to the meal plan for the selected day
+                // the meal is added to the meal plan for the selected day
                 dataManager.addToMealPlan(name, day);
                 return true;
             } catch (Exception e) {

@@ -2,7 +2,6 @@ package com.example.mealmatess;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -10,7 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mealmatess.utils.DataManager;
 
-public class ForgetPasswordActivity extends AppCompatActivity {
+public class ForgotPasswordActivity extends AppCompatActivity {
 
     private ImageButton backButton;
     private EditText emailEditText;
@@ -20,7 +19,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forget_password);
+        setContentView(R.layout.activity_forgot_password);
 
         backButton = findViewById(R.id.back_button);
         emailEditText = findViewById(R.id.email);
@@ -34,7 +33,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                 dataManager.sendResetEmail(email);
                 Toast.makeText(this, "Reset email sent to " + email + ". Check your inbox.", Toast.LENGTH_SHORT).show();
                 // Navigate to LoginActivity
-                Intent intent = new Intent(ForgetPasswordActivity.this, LoginActivity.class);
+                Intent intent = new Intent(ForgotPasswordActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             } else {
@@ -44,7 +43,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
         backButton.setOnClickListener(v -> {
             // Navigate to MainActivity (home page)
-            Intent intent = new Intent(ForgetPasswordActivity.this, MainActivity.class);
+            Intent intent = new Intent(ForgotPasswordActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         });

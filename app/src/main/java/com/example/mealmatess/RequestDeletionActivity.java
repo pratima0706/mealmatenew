@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mealmatess.utils.DataManager;
 
@@ -26,10 +28,23 @@ public class RequestDeletionActivity extends AppCompatActivity {
         dataManager = new DataManager(this);
 
         confirmDeletionButton.setOnClickListener(v -> {
-            dataManager.deleteAccount();
-            Toast.makeText(this, "Account deletion requested!", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(RequestDeletionActivity.this, LoginActivity.class));
-            finish();
+            // Show confirmation dialog
+            new AlertDialog.Builder(RequestDeletionActivity.this)
+                    .setTitle("Confirm Deletion")
+                    .setMessage("Do you surely want to delete?")
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        // User clicked Yes
+                        dataManager.deleteAccount();
+                        Toast.makeText(RequestDeletionActivity.this, "Account successfully deleted", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(RequestDeletionActivity.this, LoginActivity.class));
+                        finish();
+                    })
+                    .setNegativeButton("No", (dialog, which) -> {
+                        // User clicked No, stay on RequestDeletionActivity
+                        dialog.dismiss();
+                    })
+                    .setCancelable(false)
+                    .show();
         });
 
         cancelDeletionButton.setOnClickListener(v -> finish());

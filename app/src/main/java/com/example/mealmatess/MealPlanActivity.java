@@ -45,18 +45,18 @@ public class MealPlanActivity extends AppCompatActivity {
         mealPlanAdapter = new MealPlanAdapter(this, allMeals);
         mealPlanRecyclerView.setAdapter(mealPlanAdapter);
 
-        // Add swipe-to-delete/edit functionality with background icons
-        ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        //swipe-to-delete/edit functionality with background icons
+        ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             private final Drawable deleteIcon = ContextCompat.getDrawable(MealPlanActivity.this, android.R.drawable.ic_menu_delete);
             private final Drawable editIcon = ContextCompat.getDrawable(MealPlanActivity.this, android.R.drawable.ic_menu_edit);
             private final ColorDrawable deleteBackground = new ColorDrawable(Color.RED);
             private final ColorDrawable editBackground = new ColorDrawable(Color.GREEN);
-
             @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                                  @NonNull RecyclerView.ViewHolder target) {
                 return false;
             }
-
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 int position = viewHolder.getAdapterPosition();
@@ -69,7 +69,7 @@ public class MealPlanActivity extends AppCompatActivity {
                     Toast.makeText(MealPlanActivity.this, "Meal deleted: " + meal.getName(), Toast.LENGTH_SHORT).show();
                 } else if (direction == ItemTouchHelper.RIGHT) {
                     // Swipe right to edit
-                    Intent intent = new Intent(MealPlanActivity.this, AddActivity.class);
+                    Intent intent = new Intent(MealPlanActivity.this, EditActivity.class);
                     intent.putExtra("mealName", meal.getName());
                     startActivity(intent);
                 }

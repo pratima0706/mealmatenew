@@ -41,7 +41,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
         favoriteButton = findViewById(R.id.favoriteButton);
         addToMealPlanButton = findViewById(R.id.addToMealPlanButton);
         dataManager = new DataManager(this);
-
         mealName = getIntent().getStringExtra("mealName");
         meal = dataManager.getMeal(mealName);
         if (meal != null) {
@@ -54,19 +53,16 @@ public class RecipeDetailActivity extends AppCompatActivity {
             }
             favoriteButton.setText(meal.isFavorite() ? "Unfavorite" : "Favorite");
         }
-
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(RecipeDetailActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         });
-
         editButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, EditActivity.class);
             intent.putExtra("mealName", mealName);
             startActivity(intent);
         });
-
         deleteButton.setOnClickListener(v -> {
             dataManager.deleteMeal(mealName);
             Toast.makeText(this, "Meal deleted", Toast.LENGTH_SHORT).show();
@@ -74,7 +70,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
-
         favoriteButton.setOnClickListener(v -> {
             if (meal != null && dataManager != null) {
                 boolean wasFavorited = meal.isFavorite(); // Check the state before toggling
