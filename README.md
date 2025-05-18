@@ -18,4 +18,4 @@ The application serves as a showcase of technical skills in Android development,
 
 **Status**
 
-Completed as part of university coursewor. Feedback and suggestions for enhancements are welcome to further refine this project.
+Completed as part of university coursework. Feedback and suggestions for enhancements are welcome to further refine this project.
